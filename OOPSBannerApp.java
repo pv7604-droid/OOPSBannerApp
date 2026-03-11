@@ -1,19 +1,52 @@
 /**
- * OOPSBannerApp - UC1: Print literal text "OOPS"
- * @author [Your Name]
- * @version 1.0
+ * OOPSBannerApp - UC6: Modularization with Static Functions
  */
 public class OOPSBannerApp {
-    
-    /**
-     * Main entry point of the application.
-     * @param args Command line arguments
-     */
-    public static void main(String[] args) {
-        // Printing the literal text "OOPS" to the console
-        System.out.println("OOPS");
+
+    public static String[] getO() {
+        return new String[]{
+            " ******* ",
+            "*       *",
+            "*       *",
+            "*       *",
+            "*       *",
+            "*       *",
+            " ******* "
+        };
     }
-}
-public class Main {
-    
+
+    public static String[] getP() {
+        return new String[]{
+            "*******  ",
+            "*      * ",
+            "*      * ",
+            "*******  ",
+            "*        ",
+            "*        ",
+            "*        "
+        };
+    }
+
+    public static String[] getS() {
+        return new String[]{
+            " ********",
+            "*        ",
+            "*        ",
+            " ********",
+            "        *",
+            "        *",
+            "******** "
+        };
+    }
+
+    public static void main(String[] args) {
+        String[][] banner = { getO(), getO(), getP(), getS() };
+
+        for (int i = 0; i < 7; i++) {
+            for (int j = 0; j < banner.length; j++) {
+                System.out.print(banner[j][i] + "  ");
+            }
+            System.out.println();
+        }
+    }
 }
